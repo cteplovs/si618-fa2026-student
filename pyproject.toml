@@ -1,0 +1,55 @@
+[project]
+name = "si618-fa2026"
+version = "2026.08.24"
+description = "SI 618: Data Manipulation & Analysis — Fall 2026, University of Michigan School of Information"
+requires-python = ">=3.12,<3.14"
+
+dependencies = [
+    # --- Notebook environment ---
+    # Pinned exactly: every student and grader runs the same marimo.
+    "marimo==0.24.0",
+
+    # --- Core data stack ---
+    "pandas>=3.0,<4.0",
+    "numpy>=2.1,<3.0",
+    "pyarrow>=18.0",
+
+    # --- Visualization ---
+    "matplotlib>=3.9,<4.0",
+    "seaborn>=0.13,<0.14",
+
+    # --- Statistics ---
+    "scipy>=1.14",
+    "statsmodels>=0.14,<0.15",
+
+    # --- Machine learning ---
+    "scikit-learn>=1.6,<2.0",
+
+    # --- Text / NLP ---
+    "nltk>=3.9,<4.0",
+
+    # --- Scaling up (weeks 12-13) ---
+    "polars>=1.20,<2.0",
+    "duckdb>=1.1,<2.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.8",
+]
+
+[tool.pytest.ini_options]
+# marimo notebooks are .py files; collect tests from them directly.
+python_files = ["test_*.py", "*_test.py", "SI_618_*.py"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+# marimo notebooks are generated; don't fight the file format.
+#   E402/F841 — cells import and assign in ways ruff reads as dead code
+#   PLR1711   — every marimo cell ends in `return`
+#   B018      — a bare expression at the end of a cell is how marimo shows output
+#   PIE790    — `pass  # TODO` is the exercise stub students replace
+ignore = ["E402", "F841", "PLR1711", "B018", "PIE790"]

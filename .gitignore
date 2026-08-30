@@ -1,0 +1,19 @@
+# Course data is fetched by the notebooks, never committed.
+data/*
+!data/README.md
+*.csv
+*.parquet
+
+# Your own exports and scratch work.
+*.html
+__marimo__/
+.venv/
+__pycache__/
+.DS_Store
+
+# Jupyter is not used in this course.
+*.ipynb
+.ipynb_checkpoints/
+
+# Generated PDFs. The markdown is the source of truth; these go to Canvas.
+docs/pdf/
