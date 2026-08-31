@@ -53,3 +53,13 @@ line-length = 100
 #   B018      — a bare expression at the end of a cell is how marimo shows output
 #   PIE790    — `pass  # TODO` is the exercise stub students replace
 ignore = ["E402", "F841", "PLR1711", "B018", "PIE790"]
+
+[tool.marimo.runtime]
+# marimo's own default leaves every cell stale on open, so a freshly-opened
+# notebook shows "this cell has not been run yet" everywhere and reactivity
+# appears broken. Run the notebook on open instead.
+#
+# This has to live here rather than in each notebook's PEP 723 header: marimo
+# strips runtime.auto_instantiate from notebook metadata on purpose, so that a
+# downloaded notebook cannot make itself execute.
+auto_instantiate = true
