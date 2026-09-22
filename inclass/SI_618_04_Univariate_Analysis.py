@@ -53,9 +53,9 @@ def _(mo):
         last three, and it is meant to be done and submitted before you leave.
         Monday is a new file.
 
-        Three times today I will stop before running a cell and ask for a show of
-        hands. Four times you will write code on your own. Nothing about a
-        prediction is graded, and being wrong on one is the useful part.
+        Four times today I will stop before running a cell and ask for a show of
+        hands, and four times you will write code on your own. Nothing about a
+        prediction is graded.
         """
     )
     return
@@ -105,7 +105,7 @@ def _(pd):
          23, 32, 26, 27, 34, 20, 95, 110, 28, 25],
         name="minutes",
     )
-    commute.describe()
+    commute
     return (commute,)
 
 
@@ -115,8 +115,8 @@ def _(mo):
         r"""
         ### 🔮 Predict before the next cell runs
 
-        Is the **mean** bigger than the **median**, smaller, or about the same?
-        Decide before you scroll.
+        Look at those 24 values. Is the **mean** bigger than the **median**,
+        smaller, or about the same? Decide before you scroll.
         """
     )
     return
@@ -133,11 +133,11 @@ def _(mo):
     mo.md(
         r"""
         The mean is 33.7 minutes and the median is 27.5, so they sit more than six
-        minutes apart. Two days out of twenty-four dragged the mean past a value
-        that twenty of the twenty-four days beat.
+        minutes apart, because two days out of twenty-four dragged the mean past a
+        value that twenty of those days beat.
 
-        The mean is not wrong. It is the right answer to a question nobody asked.
-        The picture is where you see why.
+        The mean is not wrong, but it answers a question nobody asked, and the
+        histogram below shows why.
         """
     )
     return
@@ -205,7 +205,7 @@ def _(happiness):
 def _(mo):
     mo.md(
         r"""
-        156 countries, 9 columns, and nothing missing.
+        Each row is one country.
 
         | Column | What it is |
         |---|---|
@@ -239,7 +239,7 @@ def _(happiness):
 def _(mo):
     mo.md(
         r"""
-        Eight rows, and they are worth knowing by name.
+        Those eight rows are worth knowing by name.
 
         - **`count`** is non-null values, not rows. If it differs between columns
           you have missing data, and you want to know that before you average
@@ -250,8 +250,8 @@ def _(mo):
           below the first, half below the second, three quarters below the third.
           **`50%` is the median.**
 
-        Four of the eight rows are quartiles. That is the shape of the
-        distribution written as numbers, and it is most of what a box plot draws.
+        Four of those rows are quartiles, which is the shape of the distribution
+        written as numbers and most of what a box plot draws.
         """
     )
     return
@@ -268,8 +268,8 @@ def _(happiness):
 def _(mo):
     mo.md(
         r"""
-        5.41 and 5.38. Almost the same, which is the opposite of what the commute
-        data did, and that difference is the whole of Part 1.
+        The two numbers are 5.41 and 5.38, which is nearly identical and the
+        opposite of what the commute data did.
 
         Here is a small function for the five numbers we keep coming back to,
         since we want them again four more times today.
@@ -393,13 +393,13 @@ def _(bins_slider, plt, score):
 def _(mo):
     mo.md(
         r"""
-        At four bins it is a featureless mound. At twenty it is a single broad
-        hump a little above 5. Past about forty-four it breaks into teeth that are
+        At four bins it is a featureless mound, at twenty a single broad hump a
+        little above 5, and past about forty-four it breaks into teeth that are
         sampling noise from 156 rows rather than anything about the world.
 
-        There is no correct number of bins. There is a number that shows the shape
-        without inventing detail, and you find it by looking. Twenty to thirty is
-        sensible for 156 rows.
+        No number of bins is correct, though some show the shape without inventing
+        detail, and you find those by looking. Twenty to thirty is sensible for 156
+        rows.
 
         ---
         ## Part 4: The same plot, in seaborn
@@ -435,8 +435,8 @@ def _(mo):
         column rather than pulling out a Series. Every seaborn call today looks
         like that.
 
-        **The smooth curve is a KDE**, a smoothed version of the same histogram
-        with the bin edges rubbed off. Part 6 uses it properly.
+        **The smooth curve is a KDE**, which is a smoothed version of the same
+        histogram without the bin edges. Part 6 uses it properly.
 
         ### 🚀 Exercise 2: plot a different column
 
@@ -532,13 +532,14 @@ def _(score):
 def _(mo):
     mo.md(
         r"""
-        No dots at all. The fences sit at 2.08 and 8.64, and the data runs from
-        2.853 to 7.769, so South Sudan at the bottom and Finland at the top are
-        both comfortably inside.
+        There are no dots at all, because the fences sit at 2.08 and 8.64 while
+        the data runs from 2.853 to 7.769, so South Sudan at the bottom and Finland
+        at the top both fall comfortably inside.
 
-        **Finland is not an outlier.** It is the highest value in a distribution
-        wide enough to accommodate it. "Outlier" here is not a judgement about a
-        country; it is the output of one subtraction and one multiplication.
+        **Finland is not an outlier**, but the highest value in a distribution wide
+        enough to accommodate it, since the word describes the output of one
+        subtraction and one multiplication rather than a judgement about a
+        country.
 
         ### 🔮 Predict before the next cell runs
 
@@ -569,12 +570,12 @@ def _(happiness):
 def _(mo):
     mo.md(
         r"""
-        Fourteen countries above the upper fence and none below. Most of the world
-        clusters near zero on this measure, and a handful of unusually clean
-        governments trail off above it.
+        Fourteen countries sit above the upper fence and none below, because most
+        of the world clusters near zero on this measure while a handful of
+        unusually clean governments trail off above it.
 
-        Same plot, same code, completely different story. Notice also that an
-        outlier here means *notably good*. On Monday this shape gets its name.
+        The plot and the code are the same as the previous one, and an outlier here
+        means *notably good*. On Monday this shape gets its name.
 
         ### 🚀 Exercise 3: which commutes were the unusual ones?
 
@@ -640,8 +641,8 @@ def _(mo):
     mo.md(
         r"""
         The fence lands at 43.5 minutes, so a 44-minute commute would have been
-        flagged. Nothing happened on that day. The rule does not know that, which
-        is the point: it is a convention, not a verdict.
+        flagged even though nothing unusual happened that day, which makes the rule
+        a convention rather than a verdict.
 
         ---
         ## Part 6: KDE, and comparing two groups
@@ -650,8 +651,9 @@ def _(mo):
         a smooth curve with no bin edges to argue about. The height is density
         rather than count, and the area under the whole curve is 1.
 
-        It earns its place when you want two distributions on one pair of axes.
-        Two histograms on top of each other is a mess; two KDEs is readable.
+        It is most useful when you want two distributions on one pair of axes,
+        since two histograms drawn on top of each other are hard to read while two
+        KDEs are not.
         """
     )
     return
@@ -674,8 +676,8 @@ def _(mo):
     mo.md(
         r"""
         Splitting at the median guarantees two groups of roughly equal size, 80 and
-        76 here, which is what makes the comparison fair. Neither group is a
-        handful of countries someone picked.
+        76 here, which makes the comparison fair, since neither group is a handful
+        of countries someone picked.
 
         ### 🔮 Predict before the next cell runs
 
@@ -716,22 +718,21 @@ def _(happiness_groups):
 def _(mo):
     mo.md(
         r"""
-        A gap of 1.46 between the means, and curves that still overlap across most
-        of their width. Both are true at once.
+        The means differ by 1.46, and the curves still overlap across most of
+        their width.
 
         The means alone would let you write "richer countries are happier" and
-        stop. The picture makes you add "on average, with plenty of exceptions in
-        both directions", which is a different and more honest claim. Learning to
-        write the second sentence rather than the first is what this notebook is
-        for.
+        stop, whereas the picture makes you add "on average, with plenty of
+        exceptions in both directions", which is a different and more honest
+        claim.
 
         ---
         ## Part 7: Three views of one column
 
-        Each of these hides what the others show. The histogram shows shape and
-        count but no summary. The box plot shows the summary but not whether the
-        distribution has one hump or two. The strip plot shows every country and
-        nothing else.
+        Each of these hides what the others show: the histogram gives shape and
+        count without a summary, the box plot gives the summary without telling you
+        whether the distribution has one hump or two, and the strip plot gives
+        every country and nothing else.
         """
     )
     return
@@ -812,7 +813,7 @@ def _(mo):
         - the 1.5 × IQR rule is arithmetic rather than judgement, and an outlier
           can be notably good
         - `data=` and `x=` is how seaborn is called
-        - a KDE is what you reach for to put two groups on one pair of axes
+        - a KDE puts two groups on one pair of axes
 
         ## Next class
 
