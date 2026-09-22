@@ -27,7 +27,7 @@ def _(mo):
         **Fall 2026** · Session 7 (Wed Sep 23)
 
         Copyright © 2026. This notebook may not be shared outside of the course
-        without permission. Notebook version 2026.09.22.1.CT
+        without permission. Notebook version 2026.09.23.1.CT
 
         ---
 
@@ -40,7 +40,10 @@ def _(mo):
           distribution
         - Choose between a histogram, a box plot and a KDE for a single column
         - Build all three with seaborn
-        - Apply the 1.5 × IQR rule, and say what an outlier is and is not
+        - Write a reusable function that profiles any numeric column, including the
+          values the 1.5 × IQR rule flags at either end
+        - Decide which of several summaries misleads a reader most, and defend the
+          choice with a number
 
         ## Pre-class reading
 
@@ -49,13 +52,16 @@ def _(mo):
 
         ## How this notebook works
 
-        **This file is today's session, start to finish.** It is shorter than the
-        last three, and it is meant to be done and submitted before you leave.
-        Monday is a new file.
+        **This file is today's session, start to finish.** It is meant to be done
+        and submitted before you leave, and Monday is a new file.
 
-        Four times today I will stop before running a cell and ask for a show of
-        hands, and four times you will write code on your own. Nothing about a
-        prediction is graded.
+        There are two exercises rather than a string of small ones. The first asks
+        for a function you will reuse all term, and the second asks a question with
+        more than one defensible answer, where the work is in arguing for the one
+        you choose.
+
+        Four times I will stop before running a cell and ask for a show of hands.
+        Nothing about a prediction is graded.
         """
     )
     return
@@ -271,95 +277,6 @@ def _(mo):
         The two numbers are 5.41 and 5.38, which is nearly identical and the
         opposite of what the commute data did.
 
-        Here is a small function for the five numbers we keep coming back to,
-        since we want them again four more times today.
-        """
-    )
-    return
-
-
-@app.cell
-def _(pd, score):
-    def summarise(s: "pd.Series") -> "pd.Series":
-        """Return the five summary numbers this session keeps coming back to."""
-        return pd.Series(
-            {
-                "mean": s.mean(),
-                "median": s.median(),
-                "std": s.std(),
-                "min": s.min(),
-                "max": s.max(),
-            }
-        ).round(3)
-
-    summarise(score)
-    return (summarise,)
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        ### 🚀 Exercise 1: read the summary
-
-        The `freedom` column is how much freedom to make life choices contributes
-        to each country's happiness score.
-
-        ✅ Step 1: Assign its mean to `mean_freedom` and its median to
-        `median_freedom`.
-
-        ✅ Step 2: Assign its interquartile range, the 75th percentile minus the
-        25th, to `iqr_freedom`.
-
-        ✅ Step 3: Assign `True` or `False` to `mean_below_median`: is the mean the
-        smaller of the two?
-        """
-    )
-    return
-
-
-@app.cell
-def _():
-    # Your code here.
-    mean_freedom = None
-    median_freedom = None
-    iqr_freedom = None
-    mean_below_median = None
-    return iqr_freedom, mean_below_median, mean_freedom, median_freedom
-
-
-@app.cell(hide_code=True)
-def _(iqr_freedom, mean_below_median, mean_freedom, median_freedom):
-    def test_exercise_1():
-        assert mean_freedom is not None, "Assign the mean to `mean_freedom`."
-        assert round(float(mean_freedom), 3) == 0.393, (
-            f"Expected 0.393, got {mean_freedom}. Take the mean of the `freedom` "
-            "column on its own, not of the whole DataFrame."
-        )
-        assert median_freedom is not None, "Assign the median to `median_freedom`."
-        assert round(float(median_freedom), 3) == 0.417, (
-            f"Expected 0.417, got {median_freedom}. `.median()`, or `.quantile(0.5)`."
-        )
-        assert iqr_freedom is not None, "Assign the range to `iqr_freedom`."
-        assert round(float(iqr_freedom), 3) == 0.199, (
-            f"Expected 0.199, got {iqr_freedom}. That is .quantile(0.75) minus "
-            ".quantile(0.25), not max minus min."
-        )
-        assert mean_below_median is True, (
-            f"Got {mean_below_median!r}. Compare the two numbers you just computed. "
-            "This column leans the opposite way from the commute data."
-        )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        The commute's mean sat **above** its median, and `freedom`'s sits
-        **below**. That one comparison tells you which way a distribution leans,
-        and on Monday it gets a name.
-
         ---
         ## Part 3: Histograms, and the bins argument
 
@@ -433,61 +350,11 @@ def _(mo):
 
         **`data=` and `x=` is the seaborn habit.** You name the frame and the
         column rather than pulling out a Series. Every seaborn call today looks
-        like that.
+        like that, and both exercises expect it.
 
         **The smooth curve is a KDE**, which is a smoothed version of the same
         histogram without the bin edges. Part 6 uses it properly.
 
-        ### 🚀 Exercise 2: plot a different column
-
-        `social_support` is how much having someone to count on contributes to a
-        country's happiness score.
-
-        ✅ Step 1: Build a seaborn histogram of `social_support` with **20 bins**,
-        and assign the axes it returns to `ax_hist`.
-
-        ✅ Step 2: Give it an x-axis label and a title, in words a reader would
-        understand. End the cell with `ax_hist` so marimo draws it.
-        """
-    )
-    return
-
-
-@app.cell
-def _():
-    # Your code here. End the cell with `ax_hist`.
-    ax_hist = None
-    return (ax_hist,)
-
-
-@app.cell(hide_code=True)
-def _(ax_hist):
-    def test_exercise_2():
-        assert ax_hist is not None, (
-            "Assign the result of your seaborn call to `ax_hist`."
-        )
-        assert hasattr(ax_hist, "patches"), (
-            f"`ax_hist` is a {type(ax_hist).__name__}. sns.histplot returns the "
-            "axes, so assign that rather than the DataFrame or the figure."
-        )
-        assert len(ax_hist.patches) == 20, (
-            f"Expected 20 bars, found {len(ax_hist.patches)}. Pass bins=20."
-        )
-        assert ax_hist.get_xlabel().strip() != "", (
-            "The x-axis has no label. `ax_hist.set_xlabel(...)`, in words rather "
-            "than the column name."
-        )
-        assert ax_hist.get_title().strip() != "", (
-            "No title. `ax_hist.set_title(...)` — a reader should know what they "
-            "are looking at without asking you."
-        )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
         ---
         ## Part 5: Box plots, and the 1.5 × IQR rule
 
@@ -532,14 +399,13 @@ def _(score):
 def _(mo):
     mo.md(
         r"""
-        There are no dots at all, because the fences sit at 2.08 and 8.64 while
-        the data runs from 2.853 to 7.769, so South Sudan at the bottom and Finland
-        at the top both fall comfortably inside.
+        There are no dots at all, because the fences sit at 2.08 and 8.64 while the
+        data runs from 2.853 to 7.769, so South Sudan at the bottom and Finland at
+        the top both fall comfortably inside.
 
         **Finland is not an outlier**, but the highest value in a distribution wide
         enough to accommodate it, since the word describes the output of one
-        subtraction and one multiplication rather than a judgement about a
-        country.
+        subtraction and one multiplication rather than a judgement about a country.
 
         ### 🔮 Predict before the next cell runs
 
@@ -571,24 +437,35 @@ def _(mo):
     mo.md(
         r"""
         Fourteen countries sit above the upper fence and none below, because most
-        of the world clusters near zero on this measure while a handful of
-        unusually clean governments trail off above it.
+        of the world clusters near zero on this measure while a handful of unusually
+        clean governments trail off above it.
 
         The plot and the code are the same as the previous one, and an outlier here
         means *notably good*. On Monday this shape gets its name.
 
-        ### 🚀 Exercise 3: which commutes were the unusual ones?
+        ---
+        ### 🚀 Exercise 1: write a profile function
 
-        Back to `commute`, the 24 days from Part 1. Do by hand what the box plot
-        does for you.
+        You will want these numbers for every numeric column you meet this term, so
+        write the code once rather than eight times.
 
-        ✅ Step 1: Assign the 25th and 75th percentiles to `q1_commute` and
-        `q3_commute`, and their difference to `iqr_commute`.
+        ✅ Write a function `profile(s)` that takes a Series and returns a
+        dictionary with five keys:
 
-        ✅ Step 2: Assign the upper fence, Q3 + 1.5 × IQR, to `commute_upper`.
+        | Key | Value |
+        |---|---|
+        | `mean` | the mean |
+        | `median` | the median |
+        | `iqr` | the 75th percentile minus the 25th |
+        | `n_outside` | how many values fall outside the fences |
+        | `flagged` | those values themselves, as a Series |
 
-        ✅ Step 3: Assign how many days lie above that fence to
-        `n_commute_outliers`.
+        The fences are Q1 − 1.5 × IQR below and Q3 + 1.5 × IQR above, and **both
+        ends count**. One of the three columns your function is tested against has
+        its unusual values below the box rather than above it, so a function that
+        only looks upward will fail.
+
+        Write it so that it works on any numeric Series, including `commute`.
         """
     )
     return
@@ -596,42 +473,54 @@ def _(mo):
 
 @app.cell
 def _():
-    # Your code here.
-    q1_commute = None
-    q3_commute = None
-    iqr_commute = None
-    commute_upper = None
-    n_commute_outliers = None
-    return commute_upper, iqr_commute, n_commute_outliers, q1_commute, q3_commute
+    def profile(s):
+        """Summarise a numeric Series, including values outside the 1.5 × IQR fences."""
+        # Your code here. Return a dict with the five keys from the table above.
+        return {}
+
+    profile
+    return (profile,)
 
 
 @app.cell(hide_code=True)
-def _(commute_upper, iqr_commute, n_commute_outliers, q1_commute, q3_commute):
-    def test_exercise_3():
-        assert q1_commute is not None, "Assign the 25th percentile to `q1_commute`."
-        assert float(q1_commute) == 24.75, (
-            f"Expected 24.75, got {q1_commute}. `.quantile(0.25)` — a quantile "
-            "takes a fraction, not 25."
+def _(happiness, profile):
+    def test_exercise_1():
+        _gen = profile(happiness["generosity"])
+        assert isinstance(_gen, dict), (
+            f"`profile` returned a {type(_gen).__name__}, where the five keys from "
+            "the table are expected in a dict."
         )
-        assert q3_commute is not None, "Assign the 75th percentile to `q3_commute`."
-        assert float(q3_commute) == 32.25, (
-            f"Expected 32.25, got {q3_commute}. `.quantile(0.75)`."
+        _missing = {"mean", "median", "iqr", "n_outside", "flagged"} - set(_gen)
+        assert not _missing, f"The returned dict is missing {sorted(_missing)}."
+        assert abs(float(_gen["mean"]) - 0.18485) < 0.001, (
+            f"generosity's mean should be about 0.185, got {_gen['mean']}."
         )
-        assert iqr_commute is not None, "Assign the difference to `iqr_commute`."
-        assert float(iqr_commute) == 7.5, (
-            f"Expected 7.5, got {iqr_commute}. Q3 minus Q1."
+        assert abs(float(_gen["median"]) - 0.1775) < 0.001, (
+            f"generosity's median should be about 0.178, got {_gen['median']}."
         )
-        assert commute_upper is not None, "Assign the upper fence to `commute_upper`."
-        assert float(commute_upper) == 43.5, (
-            f"Expected 43.5, got {commute_upper}. Q3 + 1.5 * IQR — the 1.5 "
-            "multiplies the IQR, not Q3."
+        assert abs(float(_gen["iqr"]) - 0.1395) < 0.001, (
+            f"generosity's IQR should be about 0.14, got {_gen['iqr']}. That is "
+            ".quantile(0.75) minus .quantile(0.25), rather than max minus min."
         )
-        assert n_commute_outliers is not None, (
-            "Assign the count to `n_commute_outliers`."
+        assert int(_gen["n_outside"]) == 2, (
+            f"generosity should flag 2 values, got {_gen['n_outside']}."
         )
-        assert int(n_commute_outliers) == 2, (
-            f"Expected 2, got {n_commute_outliers}. Compare the Series to the "
-            "fence and sum the result: a boolean Series sums to its number of Trues."
+        assert len(_gen["flagged"]) == 2, (
+            f"`flagged` should hold the 2 values themselves, not "
+            f"{len(_gen['flagged'])}."
+        )
+
+        _ss = profile(happiness["social_support"])
+        assert int(_ss["n_outside"]) == 4, (
+            f"social_support should flag 4 values, got {_ss['n_outside']}. Those "
+            "four sit BELOW the lower fence, so check both ends rather than only "
+            "the top."
+        )
+
+        _hs = profile(happiness["happiness_score"])
+        assert int(_hs["n_outside"]) == 0, (
+            f"happiness_score should flag nothing, got {_hs['n_outside']}, since "
+            "its fences are wider than its data."
         )
     return
 
@@ -640,10 +529,6 @@ def _(commute_upper, iqr_commute, n_commute_outliers, q1_commute, q3_commute):
 def _(mo):
     mo.md(
         r"""
-        The fence lands at 43.5 minutes, so a 44-minute commute would have been
-        flagged even though nothing unusual happened that day, which makes the rule
-        a convention rather than a verdict.
-
         ---
         ## Part 6: KDE, and comparing two groups
 
@@ -682,8 +567,8 @@ def _(mo):
         ### 🔮 Predict before the next cell runs
 
         Two curves, the richer half and the poorer half. Will they be **A.** almost
-        entirely separate, **B.** overlapping but clearly shifted, or **C.** more
-        or less on top of each other?
+        entirely separate, **B.** overlapping but clearly shifted, or **C.** more or
+        less on top of each other?
         """
     )
     return
@@ -718,21 +603,145 @@ def _(happiness_groups):
 def _(mo):
     mo.md(
         r"""
-        The means differ by 1.46, and the curves still overlap across most of
-        their width.
+        The means differ by 1.46, and the curves still overlap across most of their
+        width.
 
-        The means alone would let you write "richer countries are happier" and
-        stop, whereas the picture makes you add "on average, with plenty of
-        exceptions in both directions", which is a different and more honest
-        claim.
+        The means alone would let you write "richer countries are happier" and stop,
+        whereas the picture makes you add "on average, with plenty of exceptions in
+        both directions", which is a different and more honest claim.
 
         ---
-        ## Part 7: Three views of one column
+        ### 🚀 Exercise 2: which mean misleads a reader most?
 
-        Each of these hides what the others show: the histogram gives shape and
-        count without a summary, the box plot gives the summary without telling you
-        whether the distribution has one hump or two, and the strip plot gives
-        every country and nothing else.
+        A colleague is about to publish one sentence per column, each of the form
+        "the average country scores X on this". For one of these three columns that
+        sentence misleads a reader more than it does for the other two:
+
+        `generosity` · `corruption` · `social_support`
+
+        Which one, and how do you know? More than one answer is defensible here, and
+        the argument matters more than the choice. Two of the columns lean in
+        opposite directions, and the largest gap in absolute terms is not the largest
+        gap relative to the size of the numbers.
+
+        ✅ Step 1: Run your `profile` function on all three, and look at how the mean
+        sits against the median in each.
+
+        ✅ Step 2: Assign the name of the column you are arguing for to
+        `misleading_column`, as a string, and assign the mean minus the median for
+        **that** column to `misleading_gap`.
+
+        ✅ Step 3: Build one seaborn plot of that column that supports your claim,
+        and assign its axes to `ax_claim`. Label it.
+
+        ✅ Step 4: Assign to `misleading_claim` a sentence or two naming the column,
+        the number you are resting the argument on, and what a reader of your
+        colleague's sentence would get wrong.
+        """
+    )
+    return
+
+
+@app.cell
+def _():
+    # Your code here. Work in as many extra cells as you like, using new names.
+    misleading_column = None
+    misleading_gap = None
+    ax_claim = None
+    misleading_claim = ""
+    return ax_claim, misleading_claim, misleading_column, misleading_gap
+
+
+@app.cell(hide_code=True)
+def _(ax_claim, happiness, misleading_claim, misleading_column, misleading_gap):
+    def test_exercise_2():
+        _candidates = ("generosity", "corruption", "social_support")
+        assert misleading_column in _candidates, (
+            f"`misleading_column` should be one of {_candidates}, got "
+            f"{misleading_column!r}."
+        )
+        _col = happiness[misleading_column]
+        _true_gap = _col.mean() - _col.median()
+        assert misleading_gap is not None, (
+            "Assign the mean minus the median to `misleading_gap`."
+        )
+        assert abs(float(misleading_gap) - _true_gap) < 0.001, (
+            f"For {misleading_column!r} the mean minus the median is "
+            f"{_true_gap:.4f}, but `misleading_gap` is {misleading_gap}. It should "
+            "be the gap for the column you named, and mind the sign."
+        )
+        assert ax_claim is not None, "Assign the axes your plot returns to `ax_claim`."
+        _marks = (
+            len(getattr(ax_claim, "patches", []))
+            + len(getattr(ax_claim, "lines", []))
+            + len(getattr(ax_claim, "collections", []))
+        )
+        assert _marks > 0, (
+            f"`ax_claim` is a {type(ax_claim).__name__} with nothing drawn on it. "
+            "Any seaborn plot of the column will do, so long as you assign the axes "
+            "it returns."
+        )
+        assert (
+            ax_claim.get_xlabel().strip() != "" or ax_claim.get_ylabel().strip() != ""
+        ), "Label the axis your column is on, in words rather than the column name."
+        assert len(misleading_claim.strip()) >= 80, (
+            f"`misleading_claim` is {len(misleading_claim.strip())} characters, where "
+            "the column, the number, and what the reader would get wrong are all "
+            "expected."
+        )
+        assert misleading_column in misleading_claim, (
+            "Name the column inside the sentence, so that it stands on its own."
+        )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        ---
+        ## Summary
+
+        - `.describe()` is eight numbers, four of which are quartiles, and `50%` is
+          the median
+        - a mean above the median, or below it, tells you which way a distribution
+          leans
+        - the number of histogram bins is a choice you make by looking
+        - the 1.5 × IQR rule is arithmetic rather than judgement, it applies at both
+          ends, and an outlier can be notably good
+        - `data=` and `x=` is how seaborn is called
+        - a KDE puts two groups on one pair of axes
+
+        ## Next class
+
+        **04b, on Monday.** The name for the shapes we kept pointing at, Q-Q plots,
+        comparing categories with bar charts, and a first look at two variables at
+        once. It is a **new file**, and this one is finished today.
+
+        ## Additional resources
+
+        - [seaborn tutorial](https://seaborn.pydata.org/tutorial.html)
+        - [Distribution plots in seaborn](https://seaborn.pydata.org/tutorial/distributions.html)
+        - [From Data to Viz](https://www.data-to-viz.com), for choosing a plot
+        """
+    )
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(
+        r"""
+        ---
+        ## 🧭 Optional: going further
+
+        Nothing below here is graded, and nothing below here is needed on Monday. It
+        is for anyone who finishes early or wants more afterwards.
+
+        **One column, three views.** Each of these hides what the others show: the
+        histogram gives shape and count without a summary, the box plot gives the
+        summary without telling you whether the distribution has one hump or two,
+        and the strip plot gives every country and nothing else.
         """
     )
     return
@@ -757,8 +766,6 @@ def _(happiness, plt, sns):
 def _(mo):
     mo.md(
         r"""
-        A short decision list, for the rest of the term:
-
         | You want to see | Reach for |
         |---|---|
         | the shape of one column | a histogram |
@@ -766,66 +773,11 @@ def _(mo):
         | two or more groups on one pair of axes | a KDE |
         | small data where every point matters | a strip plot |
 
-        ### 🚀 Exercise 4: one sentence
-
-        Scroll back to any plot in this notebook and write one sentence about what
-        it shows that its summary statistics do not. Assign it to `observation`,
-        as a string.
-
-        Full marks for a real sentence in your own words. There is no correct
-        answer here.
-        """
-    )
-    return
-
-
-@app.cell
-def _():
-    observation = ""
-    return (observation,)
-
-
-@app.cell(hide_code=True)
-def _(observation):
-    def test_exercise_4():
-        assert isinstance(observation, str), (
-            "`observation` should be a string, in quotes."
-        )
-        assert len(observation.strip()) >= 40, (
-            f"That is {len(observation.strip())} characters. One full sentence in "
-            "your own words — this is read for a real attempt, not a right answer."
-        )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-        ---
-        ## Summary
-
-        - `.describe()` is eight numbers, four of which are quartiles, and `50%`
-          is the median
-        - a mean above the median, or below it, tells you which way a distribution
-          leans
-        - the number of histogram bins is a choice you make by looking
-        - the 1.5 × IQR rule is arithmetic rather than judgement, and an outlier
-          can be notably good
-        - `data=` and `x=` is how seaborn is called
-        - a KDE puts two groups on one pair of axes
-
-        ## Next class
-
-        **04b, on Monday.** The name for the shapes we kept pointing at, Q-Q plots,
-        comparing categories with bar charts, and a first look at two variables at
-        once. It is a **new file**, and this one is finished today.
-
-        ## Additional resources
-
-        - [seaborn tutorial](https://seaborn.pydata.org/tutorial.html)
-        - [Distribution plots in seaborn](https://seaborn.pydata.org/tutorial/distributions.html)
-        - [From Data to Viz](https://www.data-to-viz.com), for choosing a plot
+        **Two more things to try.** Run your `profile` function across every numeric
+        column with a dictionary comprehension, and see which columns flag nothing at
+        all. Then try `sns.ecdfplot`, which draws the distribution with no bins and
+        no smoothing parameter, and decide what it is better and worse at than a
+        histogram.
         """
     )
     return
