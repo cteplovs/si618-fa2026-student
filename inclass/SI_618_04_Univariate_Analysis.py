@@ -408,8 +408,9 @@ def _(mo):
     ---
     ### 🚀 Exercise 1: write a profile function
 
-    You will want these numbers for every numeric column you meet this term, so
-    write the code once rather than eight times.
+    You will probably use these numbers repeatedly throughout this semester, and
+    likely beyond, so it makes sense to invest the time now to write a function
+    that you can reuse.
 
     ✅ Write a function `profile(s)` that takes a Series and returns a
     dictionary with five keys:
