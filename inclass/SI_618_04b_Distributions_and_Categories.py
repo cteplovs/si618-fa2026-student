@@ -1,7 +1,7 @@
 # /// script
 # requires-python = ">=3.12,<3.14"
 # dependencies = [
-#     "marimo>=0.23.3",
+#     "marimo==0.24.0",
 #     "pandas==3.0.5",
 #     "numpy==2.5.2",
 #     "matplotlib==3.11.1",
@@ -52,7 +52,7 @@ def _(mo):
     ## How this notebook works
 
     **This file is today's session, start to finish**, and it is the second half
-    of In-class 04. Wednesday's file was 04a, and you submit both today.
+    of In-class 04. Wednesday's file was 04a, and you submit this current notebook (04b) today in both .py and .html formats.
 
     You do not need 04a open to do this one, though the columns will be familiar.
     There are two exercises, and as on Wednesday the second has more than one
@@ -100,7 +100,7 @@ def _(mo):
 
     On Wednesday two box plots looked nothing like each other. `corruption` had
     fourteen dots above the box and none below, while `social_support` had four
-    below and none above. Those are the two shapes worth naming.
+    below and none above, and each of those two shapes has a name.
 
     - A **right-skewed** distribution has a long tail on the high side, and its
       mean sits above its median, which is what the commute data did.
@@ -129,9 +129,9 @@ def _(happiness):
 def _(mo):
     mo.md(r"""
     Read the two right-hand columns together, because they always agree in sign.
-    `social_support` skews −1.14 and its mean sits below its median;
-    `corruption` skews +1.65 and its mean sits above; `happiness_score` skews
-    0.01 and the two are within a hundredth of each other.
+    `social_support`, with a skew of −1.14, has its mean below its median, while
+    `corruption`, at +1.65, has its mean above, and `happiness_score`, whose skew
+    is only 0.01, has a mean and median within a hundredth of each other.
 
     A rough reading of the number: below about 0.5 in absolute value is nearly
     symmetric, and above 1 is strongly skewed. Those boundaries are conventions
@@ -142,12 +142,12 @@ def _(mo):
 
     A **Q-Q plot** compares your data against a distribution you name, usually
     the normal. It sorts your values, works out where each one would fall if the
-    data were normal, and plots the two against each other. Points on the
-    straight line mean your data matches, and points curving away mean it does
-    not.
+    data were normal, and plots the two against each other. If the points fall
+    along the straight line your data resembles a normal distribution, and where
+    they curve away from it, it departs from one.
 
-    This matters more than it looks, because several of the tests in notebook 05
-    assume a roughly normal distribution.
+    Several of the tests in notebook 05 assume a roughly normal distribution,
+    so this check will come up again there.
     """)
     return
 
@@ -194,9 +194,11 @@ def _(mo):
     `"normal"` · `"right-skewed"` · `"left-skewed"` · `"uniform"` ·
     `"bimodal"` · `"normal with outliers"`
 
-    Plot before you compute. A histogram tells you most of it, a box plot settles
-    whether the tail is a tail or a handful of separate values, and `.skew()`
-    and `.kurtosis()` confirm what you are already looking at.
+    Plot each column before you compute anything. A histogram will tell you most
+    of what you need, and where it leaves you unsure whether a long tail is a
+    genuine tail or a handful of separate values, a box plot will usually settle
+    it; `.skew()` and `.kurtosis()` are best used afterwards, to confirm what the
+    plots have already shown you.
 
     Two of the six have a positive skew, and telling them apart is the point of
     the exercise: one has a smooth tail trailing off, while the other is a bell
@@ -297,9 +299,9 @@ def _(happiness, np, pd):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Thirty-nine countries in each tier, by construction, since `qcut` cuts by
-    quantile rather than by value. `pd.cut` is its sibling, cutting at values you
-    name and giving groups of unequal size.
+    Each tier holds thirty-nine countries by construction, since `qcut` cuts by
+    quantile rather than by value. The related function `pd.cut` instead cuts at
+    values you specify, which generally gives groups of unequal size.
 
     A bar chart of a **mean** within each group is `sns.barplot`, which computes
     the mean for you and draws a confidence interval around it.
@@ -320,9 +322,12 @@ def _(happiness_tiered, sns):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    That rises cleanly, 0.47 to 1.31 across the four tiers, and the bars do not
-    overlap much, which is worth noticing before Monday's material on whether a
-    difference is real.
+    The mean rises steadily across the four tiers, from 0.47 to 1.31, and the
+    black lines on each bar are its confidence interval, which gives a rough
+    sense of how much the mean might move with a different sample of countries.
+    Those intervals barely overlap here, although deciding whether a difference
+    between groups is larger than chance alone would produce is a question that
+    notebook 05 takes up.
 
     To compare **two** categorical columns you need counts rather than a mean,
     and `pd.crosstab` counts every combination.
@@ -358,10 +363,11 @@ def _(plt, tier_government):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    **Grouped bars compare the pieces; stacked bars compare the totals.** Here
-    the totals are 39 everywhere, so the stacked version is only useful for
-    reading the proportion inside each bar, and the grouped version is the one
-    that answers the question.
+    Grouped bars make it easy to compare the individual counts within each tier,
+    whereas stacked bars are better suited to comparing the totals. Because every
+    total here is 39, the stacked version is useful only for reading the
+    proportion inside each bar, and it is the grouped version that answers the
+    question.
 
     ---
     ### 🚀 Exercise 2: does a cleaner government track with happiness?
@@ -450,10 +456,10 @@ def _(mo):
     ---
     ## Part 4: What a correlation does not tell you
 
-    One more warning before notebook 05, which is built on correlation and
-    regression. These four datasets were written by the statistician Frank
-    Anscombe in 1973, and they are the most efficient argument for plotting
-    anything before you summarise it.
+    Because notebook 05 is built on correlation and regression, this part ends
+    with a warning about both. The four small datasets below were constructed by
+    the statistician Frank Anscombe in 1973 to show why data should be plotted
+    before it is summarised.
     """)
     return
 
@@ -485,9 +491,10 @@ def _(pd):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Four datasets, and every summary statistic agrees: the same mean in x and y,
-    the same standard deviations, and a correlation of 0.82 in all four. A report
-    quoting those numbers would describe them as the same data.
+    The four datasets agree on every summary statistic in the table, with the
+    same means and standard deviations in x and y and a correlation of 0.82 in
+    each, so a report that quoted only those numbers would describe them as the
+    same data.
     """)
     return
 
@@ -506,15 +513,17 @@ def _(anscombe, sns):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    The first is what the summary suggests. The second is a curve, so a straight
-    line is the wrong model rather than a weak one. The third is a tight line
-    with one point dragging the fit away from it. The fourth has no relationship
-    at all, and its correlation comes entirely from a single point at x = 19.
+    Only the first dataset looks like what the summary suggests. The second
+    follows a curve, which makes a straight line the wrong model rather than
+    merely a weak one, and the third lies along a tight line from which a single
+    point pulls the fitted line away. In the fourth there is no relationship
+    between x and y at all, and the correlation comes entirely from the one
+    point at x = 19.
 
-    The correlation coefficient is the subject of notebook 05, and this is what
-    to remember when you meet it: **it answers one narrow question about a
-    straight line, and it cannot tell you whether a straight line was ever the
-    right thing to fit.**
+    When you meet the correlation coefficient in notebook 05, keep in mind that
+    it measures how closely the data follow a straight line, and that it cannot
+    tell you whether a straight line was the right thing to fit in the first
+    place.
 
     ## Summary
 
@@ -526,7 +535,8 @@ def _(mo):
       which no single number does
     - `pd.qcut` builds equal-sized groups from a numeric column, and `pd.cut`
       cuts at values you choose
-    - grouped bars compare the pieces and stacked bars compare the totals
+    - grouped bars are suited to comparing counts within a group, and stacked
+      bars to comparing the totals across groups
     - identical summary statistics can describe completely different data
 
     ## Next class
@@ -540,7 +550,7 @@ def _(mo):
     - [seaborn's categorical plots](https://seaborn.pydata.org/tutorial/categorical.html)
     - [scipy.stats.probplot](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.probplot.html)
     - [The Datasaurus Dozen](https://www.research.autodesk.com/publications/same-stats-different-graphs/),
-      which is Anscombe's point made thirteen times over
+      which makes Anscombe's point with thirteen datasets
     """)
     return
 
