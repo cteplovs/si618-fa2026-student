@@ -117,10 +117,11 @@ in class. In addition, there are regular programming and analysis assignments to
 done as homework. You will use Python for all in-class work and homework.
 
 **This term the course meets twice a week for 80 minutes rather than once for
-2 hours 50 minutes.** Most topics run across **two consecutive sessions from a
-single notebook**: the Wednesday session opens the notebook, the following Monday
-session finishes it, and you submit once at the end of Monday. Four late-term
-topics run as single sessions.
+2 hours 50 minutes.** Most topics run across **two consecutive sessions, each with
+its own notebook**: one notebook for the Wednesday session and another for the
+following Monday, which together make up a single in-class deliverable that you
+submit at the end of the Monday session. Four late-term topics run as single
+sessions.
 
 ---
 
@@ -241,16 +242,20 @@ we will use alternative materials (including paper!) for some classes. I create
 these materials to support learning by providing hands-on exercises that let you
 practice applying the techniques we are learning.
 
-Most topics span two sessions and a single notebook. You open the notebook on
-Wednesday, we stop partway through at a marked session boundary, and you finish it
-the following Monday. Your deliverable is submitted at the end of the second session
-for each topic, which after the first week always means Monday, so there's nothing
-to hand in at the end of a first session. The four single-session topics late in the
-term are submitted at the end of that one session instead.
+Most topics span two sessions, and each session has its own notebook, labelled with
+a letter after the topic number, so that topic 04 is notebook 04a on the Wednesday
+and 04b on the following Monday. Each notebook is sized so that you can finish it
+in class, with the last few minutes of the session set aside for saving and
+uploading, and anything beyond that sits in an optional section at the end that is
+not graded. The two notebooks for a topic form a single deliverable, so keep your
+files from the Wednesday session, and at the end of the Monday session upload both
+notebooks, each with its HTML export, in one submission. The four single-session
+topics late in the term have one notebook each, submitted at the end of that
+session.
 
 These activities aren't meant to be homework assignments, which are covered in the
-next section. You'll be working in groups during some of the hands-on segments, but
-you are still asked to submit your own work for credit.
+next section. The exercises are individual, and although you are welcome to talk
+them over with the people around you, you submit your own work for credit.
 
 Each notebook contains self-checking exercises marked 🚀, which run as you type and
 will generally tell you whether your answer is right before you submit it. They're
