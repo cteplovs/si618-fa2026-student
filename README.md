@@ -49,7 +49,7 @@ all this course needs. Links are posted on Canvas alongside each session.
 
 ```
 docs/        the syllabus, and setup.md if your laptop isn't set up yet
-inclass/     one marimo notebook per topic, usually taught across two sessions
+inclass/     one marimo notebook per class session, two per topic for most topics
 homework/    hwNN/README.md (the spec), RUBRIC.md, and starter.py
 project/     final project brief, milestones, and the peer-review rubric
 data/        nothing committed here, see data/README.md for why
