@@ -20,13 +20,13 @@ app = marimo.App(width="medium")
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # SI 618 · 05a: comparing groups, and what "significant" means
+    # SI 618 - 05a: comparing groups, and what "significant" means
 
     Dr. Chris Teplovs, University of Michigan School of Information
 
-    **Fall 2026** · Session 9 (Wed Sep 30)
+    **Fall 2026** - Session 9 (Wed Sep 30)
 
-    Copyright © 2026. This notebook may not be shared outside of the course
+    Copyright (c) 2026. This notebook may not be shared outside of the course
     without permission. Notebook version 2026.09.29.1.CT
 
     ---
@@ -170,7 +170,7 @@ def _(mo):
     The result has two numbers that matter. The **statistic**, about 32.8, is
     the difference in means measured in units of its own uncertainty, so a
     value that far from zero says the difference is many times larger than
-    sampling noise would produce. The **p-value**, about 10⁻¹⁰³, is the
+    sampling noise would produce. The **p-value**, about `6e-103`, is the
     probability of seeing a difference at least this large if there were no
     real difference, and a value that small means that chance is not a
     plausible explanation.
@@ -203,7 +203,7 @@ def _(insurance):
 @app.cell(hide_code=True)
 def _(mo):
     first_vote = mo.ui.radio(
-        options=["Yes, p < 0.05", "No, p ≥ 0.05", "Not sure"],
+        options=["Yes, p < 0.05", "No, p >= 0.05", "Not sure"],
         label="**First vote.** Men are billed about $1,390 more than women on average. Is that difference statistically significant?",
     )
     first_vote
@@ -224,7 +224,7 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     second_vote = mo.ui.radio(
-        options=["Yes, p < 0.05", "No, p ≥ 0.05", "Not sure"],
+        options=["Yes, p < 0.05", "No, p >= 0.05", "Not sure"],
         label="**Second vote**, after talking it over.",
     )
     reveal = mo.ui.run_button(label="Reveal the t-test")
@@ -418,7 +418,7 @@ def _(insurance, stats):
 def _(mo):
     mo.md(r"""
     The F statistic is 39.5 and the p-value is about `2e-24`, which is how
-    Python writes 2 × 10⁻²⁴, or 0.000000000000000000000002, with the 2 in the
+    Python writes `2 * 10**-24`, or 0.000000000000000000000002, with the 2 in the
     twenty-fourth decimal place. Together they say that the four regions do
     not share one mean BMI, although the ANOVA stops there and does not say
     which regions differ. **Tukey's HSD** compares every pair while adjusting
@@ -435,7 +435,7 @@ def _(insurance, pd, stats):
     pd.DataFrame(
         [
             {
-                "pair": f"{_names[_i]} – {_names[_j]}",
+                "pair": f"{_names[_i]} vs {_names[_j]}",
                 "difference": round(_tukey.statistic[_i, _j], 2),
                 "p_value": round(_tukey.pvalue[_i, _j], 4),
             }
