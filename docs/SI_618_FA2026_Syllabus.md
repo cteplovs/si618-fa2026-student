@@ -5,7 +5,11 @@
 
 > **Note:** Some syllabus details may be subject to change.
 
-Last update: Sunday, August 30, 2026 · Version 2026.08.30.4.CT
+Last update: Tuesday, September 29, 2026 · Version 2026.09.29.1.CT
+
+**Changed on September 29:** an earlier version listed a project final report due
+Friday, December 11. There is no final report, and the project's five deliverables
+are the ones in the [Final Project](#final-project) table.
 
 **Lead Instructor:** Dr. Chris Teplovs
 
@@ -164,7 +168,6 @@ sessions.
 | 25 | Wed Dec 2 | **14 Generative AI as a data tool** — *single session* | Posted on Canvas, since this material dates faster than a syllabus can | **In-class 14** · **Project milestone 3** (machine learning) |
 | 26 | Mon Dec 7 | **Project presentations I** | | |
 | 27 | Wed Dec 9 | **Project presentations II** | | **Project presentation** |
-| — | Fri Dec 11 | *No class* | | **Project final report** |
 
 ---
 
@@ -323,7 +326,7 @@ Finally, there are **live presentations** on December 7 and 9, where every group
 presents to the class for roughly seven minutes, spread across the two final
 sessions.
 
-The final report is due **Friday, December 11**. Details on the final project will
+*Changed on September 29: there is no final report.* Details on the final project will
 be available as we move through the course.
 
 ---
@@ -414,9 +417,9 @@ have only one late day left but hand in two late assignments) we will always
 allocate late days in a way that maximizes your grade. Note that resubmissions
 after the deadline will be counted as late submissions.
 
-**Late days may not be applied to in-class deliverables, the project final report,
-or the peer review.** In-class work is due at the end of the session; the peer
-review is time-boxed because another group is waiting on it.
+**Late days may not be applied to in-class deliverables or the peer review.**
+In-class work is due at the end of the session; the peer review is time-boxed
+because another group is waiting on it.
 
 If you are submitting your work late and you believe you have a *valid* excuse not
 to use your free late days, please complete the SI 618 FA 2026 Late Form, linked on
@@ -491,8 +494,8 @@ decided.
 course is hardest to fake, for three reasons that have nothing to do with detection.
 You review two other groups' analyses, which is difficult to do convincingly without
 understanding your own. You present to the room in December and take questions. And
-your report has to be anchored in your own analysis, meaning specific numbers from
-your own notebooks, which a model that did not run that analysis cannot supply.
+your milestones have to be anchored in your own analysis, meaning specific
+numbers from your own notebooks, which a model that did not run that analysis cannot supply.
 Prose that floats free of your actual output reads very differently from prose that
 doesn't, and by December I will have read a lot of both.
 
