@@ -100,8 +100,8 @@ The books we draw on most are:
 - Bruce, Bruce & Gedeck, *AI-Assisted Statistics for Data Scientists*, 3rd edition
 - Chen, *Pandas for Everyone*
 - McKinney, *Python for Data Analysis*
-- Géron, *Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow*
-- Grus, *Data Science from Scratch*
+- Géron, *Hands-On Machine Learning with Scikit-Learn and PyTorch*
+- Grus, *Data Science from Scratch*, for optional readings only
 - VanderPlas, *Python Data Science Handbook*
 
 A few readings are free on the open web rather than on O'Reilly, and those are
@@ -153,18 +153,18 @@ sessions.
 | 12 | Mon Oct 12 | 06 Data analysis III *(cont.)* | | **In-class 06** · **HW 3** |
 | 13 | Wed Oct 14 | **Project Studio** — work session, teaching team circulating | | **Project milestone 1** (data description + manipulation) |
 | — | *Mon Oct 19* | *Fall Study Break — no class* | | |
-| 14 | Wed Oct 21 | **07 Natural language processing** (nltk) | Jurafsky & Martin, [*Speech and Language Processing*](https://web.stanford.edu/~jurafsky/slp3/), chapter 1, which is free online; Grus, on natural language processing *(optional)* | — |
-| 15 | Mon Oct 26 | 07 NLP *(cont.)* | | **In-class 07** · **HW 4** |
-| 16 | Wed Oct 28 | **08 Machine learning:** introduction & Classification I | VanderPlas, on machine learning; Géron, on the machine learning landscape and the end-to-end project; Grus, on machine learning and on k-nearest neighbors | — |
+| 14 | Wed Oct 21 | **07 Natural language processing** | Jurafsky & Martin, [*Speech and Language Processing*](https://web.stanford.edu/~jurafsky/slp3/), the chapters on words and tokens and on embeddings, which are free online | — |
+| 15 | Mon Oct 26 | 07 NLP *(cont.)* | | **In-class 07** |
+| 16 | Wed Oct 28 | **08 Machine learning:** introduction & Classification I | VanderPlas, on machine learning; Géron, on the machine learning landscape and the end-to-end project; Grus, on machine learning and on k-nearest neighbors *(optional)* | **HW 4** |
 | 17 | Mon Nov 2 | 08 Intro to ML *(cont.)* | | **In-class 08** |
-| 18 | Wed Nov 4 | **09 Machine learning:** Classification II | Géron, on training models, decision trees, and ensemble learning; Grus, on decision trees and logistic regression | — |
+| 18 | Wed Nov 4 | **09 Machine learning:** Classification II | Géron, on training models, decision trees, and ensemble learning; Grus, on decision trees and logistic regression *(optional)* | — |
 | 19 | Mon Nov 9 | 09 Classification II *(cont.)* | | **In-class 09** · **HW 5** |
-| 20 | Wed Nov 11 | **10 Unsupervised learning:** PCA & k-means clustering | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering | — |
+| 20 | Wed Nov 11 | **10 Unsupervised learning:** PCA & k-means clustering | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | — |
 | 21 | Mon Nov 16 | 10 Unsupervised learning *(cont.)* | | **In-class 10** · **Project milestone 2** (analysis) |
 | 22 | Wed Nov 18 | **11 End-to-end ML pipeline** (Titanic, or another competitive framework) — *single session* | Géron, on the end-to-end machine learning project, which is worth a second read now that you have the pieces | **In-class 11** |
 | 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** · **Peer review** |
 | — | *Wed Nov 25* | *Thanksgiving — no class* | | |
-| 24 | Mon Nov 30 | **13 Scaling up II:** PySpark — *single session* | Chambers & Zaharia, *Spark: The Definitive Guide*, the overview and structured API chapters | **In-class 13** |
+| 24 | Mon Nov 30 | **13 Scaling up II:** PySpark — *single session* | The [PySpark DataFrame quickstart](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html), which is free online | **In-class 13** |
 | 25 | Wed Dec 2 | **14 Generative AI as a data tool** — *single session* | Posted on Canvas, since this material dates faster than a syllabus can | **In-class 14** · **Project milestone 3** (machine learning) |
 | 26 | Mon Dec 7 | **Project presentations I** | | |
 | 27 | Wed Dec 9 | **Project presentations II** | | **Project presentation** |
