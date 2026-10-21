@@ -5,7 +5,11 @@
 
 > **Note:** Some syllabus details may be subject to change.
 
-Last update: Tuesday, September 29, 2026 · Version 2026.09.29.1.CT
+Last update: Tuesday, October 20, 2026 · Version 2026.10.20.1.CT
+
+**Changed on October 20:** topic 10, unsupervised learning, now runs as a single
+session on Monday, November 16, and Wednesday, November 11 is a second Project
+Studio. In-class 10 is still worth 32 points.
 
 **Changed on September 29:** an earlier version listed a project final report due
 Friday, December 11. There is no final report, and the project's five deliverables
@@ -124,7 +128,7 @@ done as homework. You will use Python for all in-class work and homework.
 2 hours 50 minutes.** Most topics run across **two consecutive sessions, each with
 its own notebook**: one notebook for the Wednesday session and another for the
 following Monday, which together make up a single in-class deliverable that you
-submit at the end of the Monday session. Four late-term topics run as single
+submit at the end of the Monday session. Five late-term topics run as single
 sessions.
 
 ---
@@ -159,8 +163,8 @@ sessions.
 | 17 | Mon Nov 2 | 08 Intro to ML *(cont.)* | | **In-class 08** |
 | 18 | Wed Nov 4 | **09 Machine learning:** Classification II | Géron, on training models, decision trees, and ensemble learning; Grus, on decision trees and logistic regression *(optional)* | — |
 | 19 | Mon Nov 9 | 09 Classification II *(cont.)* | | **In-class 09** · **HW 5** |
-| 20 | Wed Nov 11 | **10 Unsupervised learning:** PCA & k-means clustering | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | — |
-| 21 | Mon Nov 16 | 10 Unsupervised learning *(cont.)* | | **In-class 10** · **Project milestone 2** (analysis) |
+| 20 | Wed Nov 11 | **Project Studio II** — work session on Milestone 2, with a short meeting for each group with the teaching team | | — |
+| 21 | Mon Nov 16 | **10 Unsupervised learning:** PCA & k-means clustering — *single session* | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | **In-class 10** · **Project milestone 2** (analysis) |
 | 22 | Wed Nov 18 | **11 End-to-end ML pipeline** (Titanic, or another competitive framework) — *single session* | Géron, on the end-to-end machine learning project, which is worth a second read now that you have the pieces | **In-class 11** |
 | 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** · **Peer review** |
 | — | *Wed Nov 25* | *Thanksgiving — no class* | | |
@@ -252,7 +256,7 @@ in class, with the last few minutes of the session set aside for saving and
 uploading, and anything beyond that sits in an optional section at the end that is
 not graded. The two notebooks for a topic form a single deliverable, so keep your
 files from the Wednesday session, and at the end of the Monday session upload both
-notebooks, each with its HTML export, in one submission. The four single-session
+notebooks, each with its HTML export, in one submission. The five single-session
 topics late in the term have one notebook each, submitted at the end of that
 session.
 
@@ -315,7 +319,11 @@ A few things are new this term, and the smaller class is what makes them possibl
 
 The **Project Studio** on Wednesday October 14 is a full session given over to
 project work, with the teaching team circulating, and Milestone 1 is due at the end
-of it. It sits immediately before Fall Study Break, which is deliberate.
+of it. It sits immediately before Fall Study Break, which is deliberate. A second
+Project Studio on Wednesday November 11 gives you a session for Milestone 2, during
+which each group also meets the teaching team for about ten minutes to talk through
+the decisions in its Milestone 1. Milestone 2 records what came out of that
+conversation.
 
 There's also a round of **structured peer review**. After Milestone 2, each group
 reviews two other groups' analyses against a rubric published in advance, with the
@@ -358,8 +366,8 @@ for the different components is as follows:
 
 | Assignment | Overall weight | Number | Points each | Total |
 |---|---|---|---|---|
-| In-class notebooks (two-session topics) | | 10 | 32 | 320 |
-| In-class notebooks (single-session topics) | ~22% | 4 | 20 | 80 |
+| In-class notebooks (topics 01-10) | | 10 | 32 | 320 |
+| In-class notebooks (topics 11-14) | ~22% | 4 | 20 | 80 |
 | Homework | ~33% | 6 | 100 | 600 |
 | Project | ~44% | 5 deliverables | varies | 800 |
 | — Milestone 1: data description & manipulation | ~11% | | | 200 |

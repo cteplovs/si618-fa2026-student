@@ -7,7 +7,7 @@ and `SI_618_04b_...` on the Monday. Each notebook is meant to be finished in cla
 
 The two notebooks for a topic are one deliverable. Keep your files from the first
 session, and at the end of the second upload both notebooks, each with its HTML
-export, in a single submission. The four single-session topics late in the term have
+export, in a single submission. The five single-session topics late in the term have
 one notebook each, submitted at the end of that session.
 
 Open any of them with:

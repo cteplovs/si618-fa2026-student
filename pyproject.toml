@@ -26,7 +26,14 @@ dependencies = [
     "scikit-learn>=1.6,<2.0",
 
     # --- Text / NLP ---
-    "nltk>=3.9,<4.0",
+    # nltk dropped Oct 19 in favour of spaCy, scikit-learn vectorisers and model2vec.
+    # OpenCC converts traditional to simplified Chinese for HW 4.
+    "opencc-python-reimplemented>=0.1.7,<0.2",
+    "spacy>=3.8,<4.0",
+    # spaCy's small English model is published as a wheel, not on PyPI.
+    "en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+    # Small static embedding models (no PyTorch); 07b loads minishlab/potion-base-8M.
+    "model2vec>=0.10,<0.11",
 
     # --- Scaling up (weeks 12-13) ---
     "polars>=1.20,<2.0",
