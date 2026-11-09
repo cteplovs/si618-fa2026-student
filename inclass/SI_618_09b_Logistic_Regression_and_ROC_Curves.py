@@ -26,7 +26,7 @@ def title(mo):
     **Fall 2026** - Session 19 (Mon Nov 9)
 
     Copyright (c) 2026. This notebook may not be shared outside of the course
-    without permission. Notebook version 2026.11.09.1.CT
+    without permission. Notebook version 2026.11.09.2.CT
 
     ---
 
@@ -471,15 +471,8 @@ def roc_intro(mo):
 
     The *area under the curve*, or *AUC*, is 1 for a curve through the top-left
     corner and 0.5 for the diagonal. It is also the share of malignant-benign pairs
-    in which the malignant tumour has the higher probability, which the room will
-    measure.
-
-    ### Practice: three pairs
-
-    Please find three people whose card has the other diagnosis from yours, and for
-    each, write their name on your sheet and whether the malignant tumour of the two
-    has the higher probability. The share of all the room's pairs that are in the
-    right order estimates the AUC of the line.
+    in which the malignant tumour has the higher probability. On the 44 cards, 0.914
+    of the 17 x 27 = 459 pairs are in the right order.
     """)
     return
 
