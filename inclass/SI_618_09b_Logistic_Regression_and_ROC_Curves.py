@@ -26,7 +26,7 @@ def title(mo):
     **Fall 2026** - Session 19 (Mon Nov 9)
 
     Copyright (c) 2026. This notebook may not be shared outside of the course
-    without permission. Notebook version 2026.11.09.2.CT
+    without permission. Notebook version 2026.11.10.1.CT
 
     ---
 
@@ -609,8 +609,9 @@ def summary(mo):
 
     ## Next class
 
-    Wednesday is Project Studio II, with a meeting for each group. On Monday,
-    November 16, notebook 10 will cover unsupervised learning.
+    Wednesday will be Project Studio II, with a meeting for each group. On Monday,
+    November 16, notebook 10 will cover decision trees and random forests, and on
+    Wednesday, November 18, notebook 11 will cover unsupervised learning.
     """)
     return
 
