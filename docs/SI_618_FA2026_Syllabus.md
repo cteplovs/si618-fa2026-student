@@ -5,7 +5,11 @@
 
 > **Note:** Some syllabus details may be subject to change.
 
-Last update: Tuesday, October 20, 2026 · Version 2026.10.20.1.CT
+Last update: Tuesday, November 10, 2026 · Version 2026.11.10.1.CT
+
+On November 10, decision trees and random forests became topic 10, on Monday,
+November 16, and unsupervised learning became topic 11, on Wednesday, November 18, in
+place of the end-to-end pipeline session. In-class 10 is still worth 32 points.
 
 **Changed on October 20:** topic 10, unsupervised learning, now runs as a single
 session on Monday, November 16, and Wednesday, November 11 is a second Project
@@ -164,8 +168,8 @@ sessions.
 | 18 | Wed Nov 4 | **09 Machine learning:** Classification II | Géron, on training models, decision trees, and ensemble learning; Grus, on decision trees and logistic regression *(optional)* | — |
 | 19 | Mon Nov 9 | 09 Classification II *(cont.)* | | **In-class 09** · **HW 5** |
 | 20 | Wed Nov 11 | **Project Studio II** — work session on Milestone 2, with a short meeting for each group with the teaching team | | — |
-| 21 | Mon Nov 16 | **10 Unsupervised learning:** PCA & k-means clustering — *single session* | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | **In-class 10** · **Project milestone 2** (analysis) |
-| 22 | Wed Nov 18 | **11 End-to-end ML pipeline** (Titanic, or another competitive framework) — *single session* | Géron, on the end-to-end machine learning project, which is worth a second read now that you have the pieces | **In-class 11** |
+| 21 | Mon Nov 16 | **10 Machine learning:** Decision trees & random forests — *single session* | Géron, on decision trees and on ensemble learning; Grus, on decision trees *(optional)* | **In-class 10** · **Project milestone 2** (analysis) |
+| 22 | Wed Nov 18 | **11 Unsupervised learning:** PCA & k-means clustering — *single session* | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | **In-class 11** |
 | 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** · **Peer review** |
 | — | *Wed Nov 25* | *Thanksgiving — no class* | | |
 | 24 | Mon Nov 30 | **13 Scaling up II:** PySpark — *single session* | The [PySpark DataFrame quickstart](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html), which is free online | **In-class 13** |
