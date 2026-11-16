@@ -49,7 +49,7 @@ count, an AUC, a precision, a recall, a threshold or another number from your ou
 
 | Points | Description |
 |---|---|
-| 9-10 | The counts of each value are shown for all three columns, the undocumented values in each are named with their counts, and each column has a decision with a reason drawn from the counts or the documentation, applied to `credit`. |
+| 9-10 | The counts of each value are shown for all three columns, the undocumented values in each are named with their counts, and each column has a decision with a reason drawn from the counts or the documentation, applied in `credit_clean`. |
 | 6-8 | The undocumented values are found, but one decision has no reason, or a decision is stated but not applied. |
 | 3-5 | Only one or two of the three columns are examined, or the undocumented values in `PAY_1` are missed. |
 | 0-2 | The counts are shown with no comparison with the documentation. |
