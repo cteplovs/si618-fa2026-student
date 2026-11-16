@@ -87,7 +87,7 @@ At the end of the course, students should be able to:
 - **L:** construct a machine learning pipeline using scikit-learn
 - **L:** use a scikit-learn classifier
 - **A:** explain when and why a dataset needs out-of-core or distributed
-  processing, and recognize the shape of a Polars or Spark solution
+  processing, and recognize the shape of a Polars solution
 - **AL:** describe common techniques used in natural language processing
 - **AL:** describe how large language models can be used as tools within a data
   analysis workflow, and where they should not be trusted
@@ -170,9 +170,9 @@ sessions.
 | 20 | Wed Nov 11 | **Project Studio II** — work session on Milestone 2, with a short meeting for each group with the teaching team | | — |
 | 21 | Mon Nov 16 | **10 Machine learning:** Decision trees & random forests — *single session* | Géron, on decision trees and on ensemble learning; Grus, on decision trees *(optional)* | **In-class 10** · **Project milestone 2** (analysis) |
 | 22 | Wed Nov 18 | **11 Unsupervised learning:** PCA & k-means clustering — *single session* | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | **In-class 11** |
-| 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** |
+| 23 | Mon Nov 23 | **12 Scaling up:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** |
 | — | *Wed Nov 25* | *Thanksgiving — no class* | | |
-| 24 | Mon Nov 30 | **13 Scaling up II:** PySpark — *single session* | The [PySpark DataFrame quickstart](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html), which is free online | **In-class 13** |
+| 24 | Mon Nov 30 | **13** To be announced — *single session* | To be announced | **In-class 13** |
 | 25 | Wed Dec 2 | **14 Generative AI as a data tool** — *single session* | Posted on Canvas, since this material dates faster than a syllabus can | **In-class 14** · **Project milestone 3** (machine learning) |
 | 26 | Mon Dec 7 | **Project presentations I** | | |
 | 27 | Wed Dec 9 | **Project presentations II** | | **Project presentation** |
