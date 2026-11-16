@@ -26,7 +26,7 @@ def title(mo):
     **Fall 2026** - Session 21 (Mon Nov 16)
 
     Copyright (c) 2026. This notebook may not be shared outside of the course
-    without permission. Notebook version 2026.11.14.1.CT
+    without permission. Notebook version 2026.11.16.1.CT
 
     ---
 
@@ -52,6 +52,7 @@ def title(mo):
     | Decision trees | 20 |
     | The depth of a tree | 8 |
     | Random forests | 15 |
+    | Exercise: cross-validate a forest with a minimum leaf size of your choice | 8 |
     | Choosing a model and testing it once | 7 |
     """)
     return
@@ -559,6 +560,58 @@ def n_trees_reading(forest_sizes, mo, tree_depths):
 
 
 @app.cell(hide_code=True)
+def leaf_exercise_intro(mo):
+    mo.md(r"""
+    ### 🚀 Exercise: cross-validate a forest with a minimum leaf size of your choice
+
+    A forest's trees have no maximum depth, but `min_samples_leaf` sets the smallest
+    number of training passengers that a leaf may contain. Every forest above uses the
+    default, 1.
+
+    ✅ Step 1: In the cell below, set `my_leaf` to a whole number from 2 to 50 of your
+    choice. Then cross-validate a pipeline of a `SimpleImputer` and a
+    `RandomForestClassifier` with `n_estimators=300`, `min_samples_leaf=my_leaf` and
+    `random_state=618`, with five folds on the training passengers, and store the mean
+    accuracy in `my_leaf_accuracy`.
+
+    ✅ Step 2: In the markdown cell after it, say in a sentence or two how your
+    accuracy compares with that of the forest of 300 trees in the table above, and why
+    a larger minimum leaf size could change it.
+    """)
+    return
+
+
+@app.cell
+def my_forest():
+    # Choose a leaf size, and cross-validate a forest of 300 trees with it.
+    my_leaf = None
+    my_leaf_accuracy = None
+    return my_leaf, my_leaf_accuracy
+
+
+@app.cell(hide_code=True)
+def leaf_answer(mo):
+    mo.md(r"""
+    *Your answer here: how your accuracy compares with the forest of 300 trees above,
+    and why a larger minimum leaf size could change it.*
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def check_leaf_exercise(my_leaf, my_leaf_accuracy):
+    def test_my_forest():
+        assert isinstance(my_leaf, int) and my_leaf >= 2, (
+            "Set `my_leaf` to a whole number of 2 or more."
+        )
+        assert isinstance(my_leaf_accuracy, float) and 0 <= my_leaf_accuracy <= 1, (
+            "Store the mean of the five fold accuracies in `my_leaf_accuracy`, "
+            "for example with `.mean()`."
+        )
+    return
+
+
+@app.cell(hide_code=True)
 def compare_intro(mo):
     mo.md(r"""
     ---
@@ -637,6 +690,12 @@ def end_of_notebook(mo):
     mo.md(r"""
     ---
     ## 🏁 END OF NOTEBOOK
+
+    In-class 10 is a one-line answer to the question on Canvas under *In-class 10*,
+    which you should submit before the end of the session. There is nothing to upload
+    from this notebook.
+
+    ❗️ Late in-class work is not accepted for credit.
     """)
     return
 
