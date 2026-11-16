@@ -416,8 +416,8 @@ def summary(mo):
 
     ## Next class
 
-    Wednesday, November 25, is Thanksgiving, with no class. On Monday, November 30,
-    notebook 13 will introduce PySpark.
+    Wednesday, November 25, is Thanksgiving, with no class, and notebook 13 will follow
+    on Monday, November 30.
     """)
     return
 
