@@ -15,9 +15,8 @@ One well-chosen test whose result you explain earns more than five tests
 reported without a reason for any of them. A clear "no" is a full answer, provided
 the evidence for it is sound.
 
-Two other groups will read your notebook for the peer review due on November 23,
-so please write it for a reader who knows the course material but has not seen your
-data.
+Please write your notebook for a reader who knows the course material but has not
+seen your data.
 
 ## The notebook
 

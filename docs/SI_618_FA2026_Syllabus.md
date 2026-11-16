@@ -170,7 +170,7 @@ sessions.
 | 20 | Wed Nov 11 | **Project Studio II** — work session on Milestone 2, with a short meeting for each group with the teaching team | | — |
 | 21 | Mon Nov 16 | **10 Machine learning:** Decision trees & random forests — *single session* | Géron, on decision trees and on ensemble learning; Grus, on decision trees *(optional)* | **In-class 10** · **Project milestone 2** (analysis) |
 | 22 | Wed Nov 18 | **11 Unsupervised learning:** PCA & k-means clustering — *single session* | Géron, on dimensionality reduction and on unsupervised learning techniques; Grus, on clustering *(optional)* | **In-class 11** |
-| 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** · **Peer review** |
+| 23 | Mon Nov 23 | **12 Scaling up I:** Polars — *single session* | The [Polars user guide](https://docs.pola.rs/), the getting-started and concepts sections | **In-class 12** · **HW 6** |
 | — | *Wed Nov 25* | *Thanksgiving — no class* | | |
 | 24 | Mon Nov 30 | **13 Scaling up II:** PySpark — *single session* | The [PySpark DataFrame quickstart](https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html), which is free online | **In-class 13** |
 | 25 | Wed Dec 2 | **14 Generative AI as a data tool** — *single session* | Posted on Canvas, since this material dates faster than a syllabus can | **In-class 14** · **Project milestone 3** (machine learning) |
@@ -314,7 +314,7 @@ The project is worth 800 points, distributed across five deliverables:
 |---|---|---|
 | Milestone 1: data description & manipulation | Wed Oct 14 | 200 |
 | Milestone 2: analysis | Mon Nov 16 | 200 |
-| Peer review of two other groups' analyses | Mon Nov 23 | 50 |
+| Peer review (dropped; everyone receives the 50 points) | | 50 |
 | Milestone 3: machine learning | Wed Dec 2 | 200 |
 | Presentation | Dec 7 / Dec 9 | 150 |
 | **Total** | | **800** |
@@ -329,10 +329,8 @@ which each group also meets the teaching team for about ten minutes to talk thro
 the decisions in its Milestone 1. Milestone 2 records what came out of that
 conversation.
 
-There's also a round of **structured peer review**. After Milestone 2, each group
-reviews two other groups' analyses against a rubric published in advance, with the
-reviews submitted on Canvas and counting toward the project grade. You may well
-learn as much from reading two other analyses as from writing your own.
+The round of structured peer review that was planned for after Milestone 2 has been
+dropped, and every student will receive its 50 points.
 
 Finally, there are **live presentations** on December 7 and 9, where every group
 presents to the class for roughly seven minutes, spread across the two final
@@ -376,7 +374,7 @@ for the different components is as follows:
 | Project | ~44% | 5 deliverables | varies | 800 |
 | — Milestone 1: data description & manipulation | ~11% | | | 200 |
 | — Milestone 2: analysis | ~11% | | | 200 |
-| — Peer review | ~3% | | | 50 |
+| — Peer review (dropped; full marks to everyone) | ~3% | | | 50 |
 | — Milestone 3: machine learning | ~11% | | | 200 |
 | — Presentation | ~8% | | | 150 |
 | **Total points available** | | | | **1800** |
@@ -429,9 +427,8 @@ have only one late day left but hand in two late assignments) we will always
 allocate late days in a way that maximizes your grade. Note that resubmissions
 after the deadline will be counted as late submissions.
 
-**Late days may not be applied to in-class deliverables or the peer review.**
-In-class work is due at the end of the session; the peer review is time-boxed
-because another group is waiting on it.
+**Late days may not be applied to in-class deliverables.** In-class work is due at
+the end of the session.
 
 If you are submitting your work late and you believe you have a *valid* excuse not
 to use your free late days, please complete the SI 618 FA 2026 Late Form, linked on
@@ -503,9 +500,8 @@ the obvious alternative, because it wasn't there when you looked at the data and
 decided.
 
 **The project.** This is where the reasoning matters most, and it's also where the
-course is hardest to fake, for three reasons that have nothing to do with detection.
-You review two other groups' analyses, which is difficult to do convincingly without
-understanding your own. You present to the room in December and take questions. And
+course is hardest to fake, for two reasons that have nothing to do with detection.
+You present to the room in December and take questions, and
 your milestones have to be anchored in your own analysis, meaning specific
 numbers from your own notebooks, which a model that did not run that analysis cannot supply.
 Prose that floats free of your actual output reads very differently from prose that

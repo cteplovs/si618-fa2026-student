@@ -94,7 +94,5 @@ In Milestones 2 and 3, a missing response to feedback lowers the log by one leve
 
 ## Where else it is used
 
-- **Peer review.** When you review another group's Milestone 2, one part of the
-  review asks you to assess one entry from their decision log.
 - **Presentation.** Your presentation includes one decision from any of your three
   logs, and the questions afterwards may start there.
