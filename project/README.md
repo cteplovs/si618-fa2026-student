@@ -18,7 +18,7 @@ apply what the course teaches.
 | Milestone 1: data description and manipulation | Wed Oct 14, end of class | 200 | [milestone-1.md](milestone-1.md) |
 | Milestone 2: analysis | Mon Nov 16 | 200 | [milestone-2.md](milestone-2.md) |
 | Peer review (dropped; everyone receives the 50 points) | | 50 | |
-| Milestone 3: machine learning | Wed Dec 2 | 200 | to come |
+| Milestone 3: machine learning | Wed Dec 2 | 200 | [milestone-3.md](milestone-3.md) |
 | Presentation | Dec 7 or Dec 9, in class | 150 | to come |
 | **Total** | | **800** | |
 
