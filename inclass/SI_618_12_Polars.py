@@ -318,7 +318,12 @@ def download_copy(INSPECTIONS_URL, Path, tempfile, urllib):
 def lazy_query(inspections_path, pl):
     queens_query = (
         pl.scan_csv(inspections_path, infer_schema_length=10000)
-        .filter(pl.col("boro") == "Queens")
+        .filter(
+            (pl.col("boro") == "Queens")
+            & (pl.col("inspection_type") == "Cycle Inspection / Initial Inspection")
+        )
+        .unique(subset=["camis", "inspection_date", "inspection_type"], keep="first")
+        .drop_nulls("score")
         .group_by("cuisine_description")
         .agg(mean_score=pl.col("score").mean(), inspections=pl.len())
         .sort("inspections", descending=True)
@@ -330,10 +335,12 @@ def lazy_query(inspections_path, pl):
 @app.cell(hide_code=True)
 def plan_reading(mo):
     mo.md(r"""
-    The plan is read from the bottom up. The bottom lines show that the scan of the
-    file reads only 3 of its 11 columns (`PROJECT 3/11 COLUMNS`) and applies the
-    filter on the borough as it reads (`SELECTION`), although the query names the
-    filter as a separate step. Nothing has been read yet; `collect` runs the plan.
+    The query repeats the preparation of `inspections`, restricted to Queens, because
+    the raw file has one row per violation rather than one per inspection. The plan is
+    read from the bottom up. The bottom lines show that the scan of the file reads only
+    6 of its 11 columns (`PROJECT 6/11 COLUMNS`) and applies both filters as it reads
+    (`SELECTION`), although the query names them as a separate step. Nothing has been
+    read yet; `collect` runs the plan.
     """)
     return
 
